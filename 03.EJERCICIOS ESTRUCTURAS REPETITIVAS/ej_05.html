@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>repetitiveStructure05</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var input1=prompt("Introduza un caracter");
+            console.log(input1.charCodeAt(0));
+            while(input1!=" ")
+            {
+                //no funciona pq no estan ordenados perfectamente  if(input1.charCodeAt(0)<="a".charCodeAt(0) & input1.charCodeAt(0)>="U".charCodeAt(0))
+                if (input1=="a" || input1=="e" || input1=="i" || input1=="o" || input1=="u" || input1=="A" || input1=="E" || input1=="I" || input1=="O" || input1=="U" )
+                //alternativa if (input1.charCodeAt(0)== 97,101,105,111,117,65,69,73,79,85 )
+                {
+                    $("#texto1").append(input1+ " es vocal<br/>")
+                }
+                else
+                {
+                    $("#texto1").append(input1+ " es consonante<br/>")
+                }
+                input1=prompt("Introduza un caracter");
+                console.log(input1.charCodeAt(0));
+            }
+            
+        });
+    </script>
+</head>
+
+<body>
+    <p>Introduce espacio para terminar</p>
+    <p id="texto1"></p>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var random = Math.floor(Math.random() * 100);
+            
+            for (var i = 1; i <= 10; i++) {
+                var num = parseInt(prompt("Adivina el numero entre 0 y 99"));
+                 if (isNaN(num)) {
+                     break;
+                 }
+                 if (num>99 || num<0) {
+                    alert("No me trolees, pierdes el intento. "+"Te quedan " + (10-i) + " intentos");
+                    continue;
+                }
+                if (num == random) {
+                    $("#texto").html("¡Enhorabuena! El numero era: "+random);
+                    $("#texto2").html("Has necesitado " + i + " intentos");
+                    console.log(random,num);
+                    break;
+                }
+                else {
+                    if (num > random) {
+                        alert("Tu numero introducido es mayor. "+"Te quedan " + (10-i) + " intentos");
+                        console.log(random,num);
+                    }
+                    else {
+                        alert("Tu numero introducido es menor. "+"Te quedan " + (10-i) + " intentos");
+                        console.log(random,num);
+                    }
+                }
+            }
+            if (i > 10) {
+                $("#texto").html("Has agotado los 10 intentos");
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <p id="texto"></p>
+    <p id="texto2"></p>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#boton1").click(function () {
+                $("#texto3").empty();
+                var input1 = parseInt($("#input1").val());
+                var input2 = parseInt($("#input2").val());
+                if (input1 > input2) {
+                    while (input2 <= input1) {
+                        if ((input2 % 2) == 0) {
+                            $("#texto4").append(input2 + " ")
+                        }
+                        input2++;
+                    }
+                }
+                else {
+                    while (input1 <= input2) {
+                        if ((input1 % 2) == 0) {
+                            $("#texto4").append(input1 + " ")
+                        }
+                        input1++;
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <p id="texto1">Introduzca el primer numero <input id="input1" type="text" value="0" size="10" style="color: black">
+    </p>
+    <p id="texto2">Introduzca el segundo numero <input id="input2" type="text" value="0" size="25" style="color: black">
+    </p>
+    <button id="boton1">Calcula Nº Pares</button>
+    <p id="texto3">Estos son todos los numeros pares entre ambos valores <br></p>
+    <p id="texto4"></p>
+</body>
+
+</html>
